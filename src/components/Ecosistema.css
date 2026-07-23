@@ -1,0 +1,99 @@
+#ecosistema {
+  background: var(--navy-deep);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+#ecosistema::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 144, 138, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ecosistema-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 72px;
+}
+.ecosistema-header .label { color: var(--teal-light); margin-bottom: 20px; }
+.ecosistema-header h2 { color: var(--white); font-size: clamp(2rem, 3.5vw, 3.2rem); margin-bottom: 16px; }
+.ecosistema-header p {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.75;
+}
+
+.ecosistema-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.eco-node {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  transition: background var(--tr), border-color var(--tr), transform var(--tr);
+}
+.eco-node:hover {
+  background: rgba(168, 144, 138, 0.08);
+  border-color: rgba(168, 144, 138, 0.25);
+  transform: translateY(-3px);
+}
+.eco-node-tag {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-light);
+  margin-bottom: 10px;
+}
+.eco-node h4 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 8px;
+}
+.eco-node p {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.5;
+}
+
+.ecosistema-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+.eco-stat { text-align: center; }
+.eco-stat-num { font-family: Georgia, serif; font-size: 2.8rem; color: var(--white); letter-spacing: -0.03em; }
+.eco-stat-num span { color: var(--teal-light); }
+.eco-stat-label {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 6px;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 1024px) {
+  .ecosistema-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .ecosistema-grid { grid-template-columns: 1fr 1fr; }
+  .ecosistema-bottom { grid-template-columns: 1fr; gap: 16px; text-align: left; }
+}
+@media (max-width: 480px) {
+  .ecosistema-grid { grid-template-columns: 1fr; }
+}

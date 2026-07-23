@@ -1,0 +1,67 @@
+#cd-meta {
+  background: var(--white);
+  border-top: 1px solid var(--light-gray);
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.cd-meta-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.cd-meta-content .label { margin-bottom: 16px; }
+.cd-meta-content h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--near-black); margin-bottom: 16px; }
+.cd-meta-content p {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.92rem;
+  color: var(--dark-gray);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.cd-meta-content p strong { color: var(--near-black); }
+
+.cd-meta-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+
+.cd-firma {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--smoke);
+}
+.cd-firma-logo {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: var(--navy-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cd-firma-by { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.7rem; color: var(--mid-gray); letter-spacing: 0.04em; }
+.cd-firma-name { font-family: Georgia, serif; font-size: 0.92rem; color: var(--teal); }
+
+.cd-servicios-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cd-servicio-card {
+  background: var(--off-white);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  transition: transform var(--tr), border-color var(--tr);
+}
+.cd-servicio-card:hover { transform: translateY(-2px); border-color: var(--teal); }
+.cd-servicio-nombre { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.8rem; font-weight: 600; color: var(--near-black); margin-bottom: 4px; }
+.cd-servicio-precio { font-family: Georgia, serif; font-size: 1rem; color: var(--teal); letter-spacing: -0.01em; }
+.cd-servicio-desc { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.72rem; color: var(--mid-gray); margin-top: 4px; line-height: 1.4; }
+
+@media (max-width: 1024px) {
+  .cd-meta-layout { grid-template-columns: 1fr; gap: 48px; }
+}
+@media (max-width: 768px) {
+  .cd-servicios-grid { grid-template-columns: 1fr; }
+  .cd-meta-actions { flex-direction: column; }
+  .cd-meta-actions a { width: 100%; text-align: center; }
+}

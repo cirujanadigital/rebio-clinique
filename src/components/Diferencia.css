@@ -1,0 +1,50 @@
+#diferencia { background: var(--white); }
+
+.diferencia-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.diferencia-col h3 {
+  font-size: 1.4rem;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--light-gray);
+}
+.diferencia-col-bad h3 { color: var(--mid-gray); }
+.diferencia-col-good h3 { color: var(--near-black); }
+.diferencia-col-good h3 span { color: var(--teal); }
+
+.diferencia-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--smoke);
+}
+.diferencia-item:last-child { border-bottom: none; }
+
+.diff-icon {
+  width: 20px; height: 20px; min-width: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+.diff-icon-bad { background: #fef2f2; color: #dc2626; }
+.diff-icon-good { background: rgba(168, 144, 138, 0.1); color: var(--teal); }
+
+.diferencia-item-text {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.88rem;
+  color: var(--dark-gray);
+  line-height: 1.6;
+}
+.diferencia-item-text strong { color: var(--near-black); font-weight: 600; }
+
+@media (max-width: 1024px) {
+  .diferencia-layout { grid-template-columns: 1fr; gap: 40px; }
+}
