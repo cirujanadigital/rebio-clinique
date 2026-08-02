@@ -65,7 +65,7 @@ nav.nav-scrolled .nav-links a:hover { color: var(--teal); }
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--white);
-  background: var(--teal);
+  background: var(--navy);
   border: none;
   padding: 10px 22px;
   border-radius: var(--radius-sm);

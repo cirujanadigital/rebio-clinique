@@ -29,8 +29,8 @@ export default function Ecosistema() {
           {NODES.map((n, i) => (
             <article key={n.title} className={`eco-node reveal reveal-delay-${(i % 4) + 1}`}>
               <p className="eco-node-tag">{n.tag}</p>
-              <h4>{n.title}</h4>
-              <p>{n.text}</p>
+            <h3>{n.title}</h3>
+            <p>{n.text}</p>
             </article>
           ))}
         </div>

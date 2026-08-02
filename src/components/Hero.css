@@ -125,7 +125,7 @@
   animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.54s forwards;
 }
 
-#hero .btn-primary { background: var(--teal); }
+#hero .btn-primary { background: var(--navy); }
 #hero .btn-primary:hover { background: var(--teal-light); }
 #hero .btn-secondary {
   color: rgba(255, 255, 255, 0.9);
