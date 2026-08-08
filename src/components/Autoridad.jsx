@@ -1,8 +1,15 @@
 function Stars() {
   return (
-    <div className="testimonio-stars" aria-label="5 estrellas">
+    <div className="testimonio-stars" role="img" aria-label="5 estrellas">
       {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
+        <svg
+          key={i}
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="currentColor"
+          aria-hidden="true"
+        >
           <path d="M7 1l1.5 4h4l-3.5 2.5 1.5 4L7 9 3.5 11.5l1.5-4L1.5 5h4z" />
         </svg>
       ))}
@@ -29,8 +36,15 @@ export default function Autoridad() {
       <div className="section-inner">
         <div className="section-header reveal">
           <span className="label">Equipo clínico</span>
-          <h2 id="autoridad-title">Médicos. No coaches.<br />No plataformas.</h2>
-          <p>Cada tratamiento es supervisado por médicos especializados. El protocolo es clínico. El seguimiento es real.</p>
+          <h2 id="autoridad-title">
+            Médicos. No coaches.
+            <br />
+            No plataformas.
+          </h2>
+          <p>
+            Cada tratamiento es supervisado por médicos especializados. El protocolo es clínico. El
+            seguimiento es real.
+          </p>
         </div>
 
         <div className="autoridad-layout">
@@ -46,8 +60,16 @@ export default function Autoridad() {
               activo de la Sociedad Uruguaya de Endocrinología y Metabolismo.
             </p>
             <div className="autoridad-certs">
-              {['GLP-1', 'Obesología Clínica', 'Endocrinología', 'Medicina Metabólica', 'Nutrición Clínica'].map((c) => (
-                <span className="cert-tag" key={c}>{c}</span>
+              {[
+                'GLP-1',
+                'Obesología Clínica',
+                'Endocrinología',
+                'Medicina Metabólica',
+                'Nutrición Clínica',
+              ].map((c) => (
+                <span className="cert-tag" key={c}>
+                  {c}
+                </span>
               ))}
             </div>
           </div>

@@ -12,10 +12,10 @@ const WEEKS = Array.from({ length: 12 }, (_, i) => {
       week === 1
         ? 'Inicio de protocolo. Tolerancia adecuada.'
         : week === 5
-        ? 'Control de laboratorio antes de subir dosis.'
-        : week === 9
-        ? 'Ajuste a dosis de mantenimiento.'
-        : 'Sin novedades reportadas.',
+          ? 'Control de laboratorio antes de subir dosis.'
+          : week === 9
+            ? 'Ajuste a dosis de mantenimiento.'
+            : 'Sin novedades reportadas.',
     nextAppointment: applied ? null : `Semana ${week} · consultorio`,
   };
 });
@@ -32,26 +32,32 @@ export default function TrackerDosis() {
         <p>Vista de ejemplo — así ve su progreso un paciente real.</p>
       </div>
 
-      <div className="tracker-grid" role="list">
+      <div className="tracker-grid" role="group" aria-label="Semanas del protocolo">
         {WEEKS.map((w) => (
           <button
             type="button"
             key={w.week}
-            role="listitem"
             className={`tracker-cell ${w.applied ? 'tracker-cell-done' : ''} ${selected === w.week ? 'tracker-cell-active' : ''}`}
             onClick={() => setSelected(w.week === selected ? null : w.week)}
             aria-pressed={selected === w.week}
+            aria-label={`Semana ${w.week} — ${w.dose}${w.applied ? ' — aplicada' : ''}`}
           >
             <span className="tracker-cell-week">S{w.week}</span>
             <span className="tracker-cell-dose">{w.dose}</span>
-            {w.applied && <span className="tracker-cell-check" aria-hidden="true">✓</span>}
+            {w.applied && (
+              <span className="tracker-cell-check" aria-hidden="true">
+                ✓
+              </span>
+            )}
           </button>
         ))}
       </div>
 
       {active && (
         <div className="tracker-detail">
-          <p className="tracker-detail-title">Semana {active.week} · dosis {active.dose}</p>
+          <p className="tracker-detail-title">
+            Semana {active.week} · dosis {active.dose}
+          </p>
           <p className="tracker-detail-note">{active.note}</p>
           {active.nextAppointment && (
             <p className="tracker-detail-next">Próxima cita: {active.nextAppointment}</p>

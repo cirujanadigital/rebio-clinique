@@ -78,7 +78,8 @@ footer {
 }
 .footer-credit a {
   color: var(--teal-light);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 @media (max-width: 1024px) {
